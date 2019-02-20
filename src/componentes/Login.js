@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 
 export default class Login extends Component {
 
@@ -28,6 +28,7 @@ export default class Login extends Component {
                 }
             })
             .then(token => {
+                localStorage.setItem('authToken', token);
                 browserHistory.push('/timeline');
             })
             .catch(error => {
